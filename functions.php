@@ -207,6 +207,12 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Load TGMPA Activation compatibility file.
+ */
+require get_template_directory() . '/tgmpa/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgmpa-activation.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
