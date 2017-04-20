@@ -2,9 +2,9 @@
 // Theme with update info
 $packages['theme'] = array( //Replace theme with theme stylesheet slug that the update is for
     'versions' => array(
-        '1.0.0' => array( //Array name should be set to current version of update
-            'version' => '1.0.0', //Current version available
-            'date' => '2017-04-20', //Date version was released
+        '1.0.1' => array( //Array name should be set to current version of update
+            'version' => '1.0.1', //Current version available
+            'date' => '2017-04-21', //Date version was released
             'package' => get_site_url(). '/theme-updater/download.php?key=' . md5('hellobase.zip' . mktime(0,0,0,date("n"),date("j"),date("Y"))),
             //file_name is the name of the file in the update folder.
             'file_name' => 'hellobase.zip',	//File name of theme zip file
