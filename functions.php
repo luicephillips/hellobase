@@ -231,3 +231,9 @@ require get_template_directory() . '/classes/shortcodes.php';
  * Load Contact Form 7 compatibility file.
  */
 require get_template_directory() . '/classes/cf7.php';
+
+/**
+ * Wordpress Hooks
+ */
+require get_template_directory() . '/classes/hooks.php';
+
