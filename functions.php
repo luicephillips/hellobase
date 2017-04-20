@@ -232,4 +232,7 @@ require get_template_directory() . '/classes/shortcodes.php';
  */
 require get_template_directory() . '/classes/cf7.php';
 
-
+/**
+ * Load Github Updater compatibility file.
+ */
+require get_template_directory() . '/update.php';
