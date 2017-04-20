@@ -64,6 +64,20 @@ function hellobase_register_required_plugins() {
 			'slug'        => 'wordpress-seo',
 			'is_callable' => 'wpseo_init',
 		),
+		
+		array(
+			'name'               => 'Contact Form 7', // The plugin name.
+			'slug'               => 'contact-form-7', // The plugin slug (typically the folder name).
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+		),
+		
+		array(
+			'name'               => 'Advanced Custom Fields PRO', // The plugin name.
+			'slug'               => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory() . '/tgmpa/plugins/advanced-custom-fields-pro.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+		),
 
 	);
 
