@@ -1,16 +1,21 @@
 <?php
+/* public Class
+ *
+ * @package CPT Filters
+ * @since 1.0.0
+ */
+
+global $hellobaseregistercpt;
 class hellobaseRegisterCPT {
 
-    public function __construct() {
-
-        add_action( 'init', array( $this, 'hellobase_register_custom_post_type_callback' ) );
-
-    }
+    // Constuct
+    public function __construct() { }
 
     /**
      * Register a custom post types.
-     *
      * @link http://codex.wordpress.org/Function_Reference/register_post_type
+	 * @package CPT Filters
+ 	 * @since 1.0.0
      */
     function hellobase_register_custom_post_type_callback() {
 
@@ -61,6 +66,17 @@ class hellobaseRegisterCPT {
 
         /* Regsiter CPT with extended Customization from here */
     }
+	/*
+	 * Add Custom Post type hooks
+	 * @package CPT Filters
+ 	 * @since 1.0.0
+     */
+	public function add_hooks(){
 
+		 // Add Custom post type hook
+		 add_action( 'init', array( $this, 'hellobase_register_custom_post_type_callback' ) );
+
+	}
 }
-new hellobaseRegisterCPT();
+$hellobaseregistercpt = new hellobaseRegisterCPT();
+$hellobaseregistercpt -> add_hooks;

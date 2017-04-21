@@ -1,22 +1,22 @@
 <?php
 /**
  * HelloBase functions and definitions
- *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
  * @package HelloBase
  */
 
- /*
-  * Define Constants
-  */
+
+/**
+ * Define Constants
+ * @package Hellobase
+ * @since 1.0.0
+ */
 
 if( !defined( 'THEME_TEXTDOMAIN' ) ) {
 	define( 'THEME_TEXTDOMAIN', 'hellobase' ); // Theme Name
 }
 
 /*
-
  * Add required Includes files.
  * Implement the Custom Header feature.(custom-header.php)
  * Custom template tags for this theme. (template-tags.php)
@@ -28,6 +28,8 @@ if( !defined( 'THEME_TEXTDOMAIN' ) ) {
  * Load Shortcodes compatibility file. (shortcodes.php)
  * Load Contact Form 7 compatibility file. (cf7.php)
  * Wordpress Hooks (hooks.php)
+ * @package Hellobase
+ * @since 1.0.0
  */
 
 $includes_files = array(
