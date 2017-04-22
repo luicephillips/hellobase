@@ -79,6 +79,7 @@ function hellobase_register_required_plugins() {
 			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 		),
 
+
 	);
 
 	/*

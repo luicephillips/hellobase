@@ -3,6 +3,7 @@
  * HelloBase Theme Customizer
  *
  * @package HelloBase
+ * @since 1.0.0
  */
 
 /**

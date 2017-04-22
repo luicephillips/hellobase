@@ -1,7 +1,8 @@
 <?php 
 /**
  * Theme setup.
- *
+ * @package Hellobase
+ * @since 1.0.0
  */
  
  if ( ! function_exists( 'hellobase_setup' ) ) :
@@ -76,6 +77,8 @@ add_action( 'after_setup_theme', 'hellobase_setup' );
  * Priority 0 to make it available to lower priority callbacks.
  *
  * @global int $content_width
+ * @package Hellobase
+ * @since 1.0.0
  */
 function hellobase_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'hellobase_content_width', 640 );
@@ -85,6 +88,8 @@ add_action( 'after_setup_theme', 'hellobase_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
+ * @package Hellobase
+ * @since 1.0.0
  */
 function hellobase_scripts() {
 
@@ -194,6 +199,8 @@ add_action( 'widgets_init', 'hellobase_widgets_init' );
 
 /*
  * ACf Options Page
+ * @package Hellobase
+ * @since 1.0.0
  */
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page(array(

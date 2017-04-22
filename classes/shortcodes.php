@@ -1,5 +1,12 @@
 <?php
-global $hellobaseShortcodes;
+/* Shortcodes Class
+ *
+ * @package Hellobase
+ * @since 1.0.0
+ */
+
+
+global $hellobaseshortcodes;
 class hellobaseShortcodes {
 
 	// Constaruct
@@ -7,6 +14,8 @@ class hellobaseShortcodes {
 
 	/*
 	 * Button Shortcode
+	 * @package Hellobase
+     * @since 1.0.0
 	 */
 	function view_button($option, $content) {
         $html = '';
@@ -23,13 +32,17 @@ class hellobaseShortcodes {
         return $html;
     }
 
+	/*
+	 * Add Shortcodes Hooks
+	 * @package Hellobase
+     * @since 1.0.0
+	 */
 	public function add_hooks(){
 
-		 // Button Short Code
+		// Button Short Code
         add_shortcode('Button', array($this, 'view_button'));
 
 	}
-
 }
-$hellobaseShortcodes = new hellobaseShortcodes();
-$hellobaseShortcodes -> add_hooks();
+$hellobaseshortcodes = new hellobaseShortcodes();
+$hellobaseshortcodes -> add_hooks();
