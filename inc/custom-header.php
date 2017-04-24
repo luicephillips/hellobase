@@ -15,6 +15,8 @@
  * Set up the WordPress core custom header feature.
  *
  * @uses hellobase_header_style()
+ * @package Hellobase
+ * @since 1.0.0
  */
 function hellobase_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'hellobase_custom_header_args', array(
@@ -33,6 +35,8 @@ if ( ! function_exists( 'hellobase_header_style' ) ) :
  * Styles the header image and text displayed on the blog.
  *
  * @see hellobase_custom_header_setup().
+ * @package Hellobase
+ * @since 1.0.0
  */
 function hellobase_header_style() {
 	$header_text_color = get_header_textcolor();

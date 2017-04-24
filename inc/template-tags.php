@@ -5,6 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package HelloBase
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'hellobase_posted_on' ) ) :
