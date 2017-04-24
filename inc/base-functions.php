@@ -57,6 +57,14 @@ function hellobase_setup() {
 		'caption',
 	) );
 
+    /* Added Post Format Supports */
+    $post_format_args = array(
+        'image',
+        'gallery',
+        'video'
+    );
+    add_theme_support( 'post-formats', apply_filters( 'hellobase_post_format_arguments', $post_format_args ) );
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'hellobase_custom_background_args', array(
 		'default-color' => 'ffffff',
