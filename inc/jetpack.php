@@ -8,35 +8,49 @@
  * @since 1.0.0
  */
 
-/**
- * Jetpack setup function.
- *
- * See: https://jetpack.com/support/infinite-scroll/
- * See: https://jetpack.com/support/responsive-videos/
- */
-function hellobase_jetpack_setup() {
-	// Add theme support for Infinite Scroll.
-	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'hellobase_infinite_scroll_render',
-		'footer'    => 'page',
-	) );
+global $hellobasejetpack;
+class hellobaseJetpack {
 
-	// Add theme support for Responsive Videos.
-	add_theme_support( 'jetpack-responsive-videos' );
-}
-add_action( 'after_setup_theme', 'hellobase_jetpack_setup' );
+	/**
+	 * Jetpack setup function.
+	 *
+	 * See: https://jetpack.com/support/infinite-scroll/
+	 * See: https://jetpack.com/support/responsive-videos/
+	 * @package HelloBase
+     * @since 1.0.0
+	 */
+	function hellobase_jetpack_setup() {
+		// Add theme support for Infinite Scroll.
+		add_theme_support( 'infinite-scroll', array(
+			'container' => 'main',
+			'render'    => 'hellobase_infinite_scroll_render',
+			'footer'    => 'page',
+		) );
 
-/**
- * Custom render function for Infinite Scroll.
- */
-function hellobase_infinite_scroll_render() {
-	while ( have_posts() ) {
-		the_post();
-		if ( is_search() ) :
-			get_template_part( 'template-parts/content', 'search' );
-		else :
-			get_template_part( 'template-parts/content', get_post_format() );
-		endif;
+		// Add theme support for Responsive Videos.
+		add_theme_support( 'jetpack-responsive-videos' );
+	}
+
+	/**
+	 * Custom render function for Infinite Scroll.
+	 * @package HelloBase
+     * @since 1.0.0
+	 */
+	function hellobase_infinite_scroll_render() {
+		while ( have_posts() ) {
+			the_post();
+			if ( is_search() ) :
+				get_template_part( 'template-parts/content', 'search' );
+			else :
+				get_template_part( 'template-parts/content', get_post_format() );
+			endif;
+		}
+	}
+
+	function add_hooks(){
+		add_action( 'after_setup_theme', array($this, 'hellobase_jetpack_setup' ));
+
 	}
 }
+$hellobasejetpack = new hellobaseJetpack;
+$hellobasejetpack  -> add_hooks();
