@@ -46,6 +46,12 @@
             $defaults = array(
                 'theme_location' => 'menu-1',
             );
+
+            /**
+             * Filter for Navigation Menu Arguments
+             * @package Hellobase
+             * @since 1.0.0
+             */
             wp_nav_menu( apply_filters( 'hellobase_menu_args', $defaults ) );
             ?>
 		</nav><!-- #site-navigation -->
