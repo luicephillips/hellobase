@@ -18,7 +18,8 @@ class hellobaseShortcodes {
      * @since 1.0.0
 	 */
 	function view_button($option, $content) {
-        $html = '';
+
+		$html = '';
         if (!isset($option['target'])) {
             $option['target'] = '_self';
         }
@@ -27,8 +28,11 @@ class hellobaseShortcodes {
         } else {
             $title = $content;
         }
-        $html .= '<a href="' . $option['href'] . '" class="btn ' . $option['class'] . '" title="' . strip_tags($title) . '">' . $content . '</a>';
-        //echo $content;
+
+		// Add Class
+		$class = isset($option['class'])? $option['class'] : '';
+        $html .= '<a href="' . $option['href'] . '" class="btn ' . $class . '" title="' . strip_tags($title) . '">' . $content . '</a>';
+
         return $html;
     }
 

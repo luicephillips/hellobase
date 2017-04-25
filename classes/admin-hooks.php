@@ -58,6 +58,26 @@ class hellobaseAdminHooks {
 		<?php
 		}
 
+		// Add Button Quicktags
+		function custom_quicktags() {
+			?>
+				<script language="javascript" type="text/javascript">
+		/* Adding Quicktag buttons to the editor WordPress ver. 3.3 and above
+		* - Button HTML ID (required)
+		* - Button display, value="" attribute (required)
+		* - Opening Tag (required)
+		* - Closing Tag (required)
+		* - Access key, accesskey="" attribute for the button (optional)
+		* - Title, title="" attribute (optional)
+		* - Priority/position on bar, 1-9 = first, 11-19 = second, 21-29 = third, etc. (optional)
+		*/
+		QTags.addButton( 'Button', 'Button', '[Button href="#"]View Button[/Button]', '', 'w' );
+	</script>
+                <?php
+
+
+            }
+
 	   /**
 	   * Register and Admin Theme Settings Page Fields
        * @package Hellobase
@@ -100,6 +120,8 @@ class hellobaseAdminHooks {
 
 			// Add Theme Settings Page Fields
 			add_action( 'admin_init', array( $this, 'theme_settings_page_fields' ) );
+
+			add_action( 'admin_print_footer_scripts', array($this,'custom_quicktags') );
 
 	  }
 
