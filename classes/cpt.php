@@ -79,4 +79,4 @@ class hellobaseRegisterCPT {
 	}
 }
 $hellobaseregistercpt = new hellobaseRegisterCPT();
-$hellobaseregistercpt -> add_hooks;
+$hellobaseregistercpt -> add_hooks();

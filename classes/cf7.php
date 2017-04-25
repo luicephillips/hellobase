@@ -42,4 +42,4 @@ class hellobaseCF7 {
 
 }
 $hellobasecf7 = new hellobaseCF7();
-$hellobasecf7 -> add_hooks;
+$hellobasecf7 -> add_hooks();
