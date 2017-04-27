@@ -36,6 +36,7 @@ if( !defined( 'THEME_TEXTDOMAIN' ) ) {
 $includes_files = array(
 	 'inc/custom-header.php',
 	 'inc/template-tags.php',
+	 'inc/template-functions.php',
 	 'inc/extras.php',
 	 'inc/customizer.php',
 	 'tgmpa/class-tgm-plugin-activation.php',
@@ -51,5 +52,4 @@ $includes_files = array(
 foreach($includes_files as $filename){
     require_once $filename ;
 }
-
 
