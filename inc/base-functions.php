@@ -100,7 +100,7 @@ add_action( 'after_setup_theme', 'hellobase_content_width', 0 );
 			'main-style'      	    => '/style.css',
 			'responsive-style'      => '/css/responsive.css',
 		);
-		$cssfiles = apply_filters( 'hellobase_css_scripts_args', $cssfiles);
+		$cssfiles = apply_filters( 'hellobase_scripts_css_args', $cssfiles);
 
 		foreach($cssfiles as $cssfilekey=>$cssfilevalue){
 			wp_enqueue_style( $cssfilekey, get_template_directory_uri() . $cssfilevalue );
@@ -120,12 +120,14 @@ add_action( 'after_setup_theme', 'hellobase_content_width', 0 );
 			$jsfiles = $jsfiles[0];
 		}
 
-		$jsfiles = apply_filters( 'hellobase_js_scripts_args', $jsfiles);
+		$jsfiles = apply_filters( 'hellobase_scripts_js_args', $jsfiles);
 
 		foreach($jsfiles as $jsfilekey=>$jsfilevalue){
 			wp_enqueue_script( $jsfilekey, get_template_directory_uri() . $jsfilevalue , array( 'jquery' ), '', true );
 		}
-		wp_localize_script( 'general-js', 'myAjax_new', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+
+		// Include Localize Ajax URL Scripts
+		wp_localize_script( 'general-js', 'adminAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
 		wp_enqueue_script( 'general-js' );
 
 		# If website doesnt have commenting functionality then we can remove this.

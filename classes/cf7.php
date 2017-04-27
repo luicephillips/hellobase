@@ -23,7 +23,7 @@ class hellobaseCF7 {
     public function hellobase_deregister_cf7_resources() {
         # Add list of page on which Contact Form 7 is used
 		$page_array = array( 'contact-us', 'contact' );
-		$page_list = apply_filters('hellobase_cf7_include_pages', $page_array);
+		$page_list = apply_filters('hellobase_cf7_include_pages_args', $page_array);
         if ( ! is_page(  ) ) {
             wp_deregister_style( 'contact-form-7' );
             wp_deregister_script( 'contact-form-7' );
