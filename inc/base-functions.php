@@ -60,6 +60,7 @@ function hellobase_setup() {
 	// This role has not permission to admin add plugin
 	$captibilties = get_role('administrator');
 	$captibilties -> capabilities['install_plugins'] = false ;
+	$captibilties = apply_filters( 'hellobase_admin_role_capabilites_args', $captibilties ) ;
 	add_role( 'subadmin', __('Sub Administrator' ),$captibilties -> capabilities);
 }
  }
