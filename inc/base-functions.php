@@ -100,7 +100,7 @@ add_action( 'after_setup_theme', 'hellobase_content_width', 0 );
 			'main-style'      	    => '/style.css',
 			'responsive-style'      => '/css/responsive.css',
 		);
-		 $include_owl_carousel = get_option( 'include_owl_carousel' );
+		$cssfiles = apply_filters( 'hellobase_css_scripts_args', $cssfiles);
 
 		foreach($cssfiles as $cssfilekey=>$cssfilevalue){
 			wp_enqueue_style( $cssfilekey, get_template_directory_uri() . $cssfilevalue );
@@ -112,10 +112,16 @@ add_action( 'after_setup_theme', 'hellobase_content_width', 0 );
 			'base-js'               => '/js/base.js',
 			'general-js'	        => '/js/general.js',
 		);
+		 $include_owl_carousel = get_option( 'include_owl_carousel' );
+
+
 		if(isset($include_owl_carousel['owl-carousel']) && $include_owl_carousel['owl-carousel'] == 1){
 			array_unshift($jsfiles,array('owl-carousel-js' => '/assets/js/owl.carousel.min.js'));
 			$jsfiles = $jsfiles[0];
 		}
+
+		$jsfiles = apply_filters( 'hellobase_js_scripts_args', $jsfiles);
+
 		foreach($jsfiles as $jsfilekey=>$jsfilevalue){
 			wp_enqueue_script( $jsfilekey, get_template_directory_uri() . $jsfilevalue , array( 'jquery' ), '', true );
 		}

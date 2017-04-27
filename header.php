@@ -42,7 +42,9 @@
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'hellobase' ); ?></button>
-			<?php $defaults = array( 'theme_location' => 'primary', ); /** * Filter for Navigation Menu Arguments * @package Hellobase * @since 1.0.0 */ wp_nav_menu( apply_filters( 'hellobase_menu_args', $defaults ) ); ?>
+			<?php $defaults = array( 'theme_location' => 'primary', );
+			 /** * Filter for Navigation Menu Arguments * @package Hellobase * @since 1.0.0 */
+			 wp_nav_menu( apply_filters( 'hellobase_menu_args', $defaults ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
