@@ -46,6 +46,7 @@ $includes_files = array(
 	 'classes/cpt.php',
 	 'classes/shortcodes.php',
 	 'classes/cf7.php',
+	 'classes/custom-taxonomy.php',
      'classes/hooks.php',
 	 'classes/admin-hooks.php',
      );

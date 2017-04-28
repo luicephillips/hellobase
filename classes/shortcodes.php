@@ -37,6 +37,18 @@ class hellobaseShortcodes {
     }
 
 	/*
+	 * Breadcrumb Shortcode
+	 * @package Hellobase
+     * @since 1.0.0
+	 */
+	 function hellobase_breadcrumbs_shortcode(){
+
+		hellobase_breadcrumbs();
+	 }
+
+
+
+	/*
 	 * Add Shortcodes Hooks
 	 * @package Hellobase
      * @since 1.0.0
@@ -45,6 +57,10 @@ class hellobaseShortcodes {
 
 		// Button Short Code
         add_shortcode('Button', array($this, 'view_button'));
+
+		// Button Short Code
+        add_shortcode('HellobaseBreadcrumbs', array($this, 'hellobase_breadcrumbs_shortcode'));
+
 
 	}
 }

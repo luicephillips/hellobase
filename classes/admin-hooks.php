@@ -72,6 +72,7 @@ class hellobaseAdminHooks {
 		* - Priority/position on bar, 1-9 = first, 11-19 = second, 21-29 = third, etc. (optional)
 		*/
 		QTags.addButton( 'Button', 'Button', '[Button href="#"]View Button[/Button]', '', 'w' );
+			QTags.addButton( 'Breadcrumbs', 'Breadcrumbs', '[HellobaseBreadcrumbs]', '', 'w' );
 	</script>
                 <?php
 
